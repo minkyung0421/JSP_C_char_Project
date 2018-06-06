@@ -7,41 +7,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	String strReferer = request.getHeader("referer");
-
-	if(strReferer == null){
-	%>
-	<script>
-		alert("다시 접근");
-		document.location.href = "start.jsp";
-	</script>
-	<%
-		return;
-	}
-%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 	String ID = request.getParameter("id");
 	String PW = request.getParameter("pw");
+
+	String userID="choi";
+    String userPWD="1234";
 	
-	String tmpText = "";
-	String[] tmpArray1;
-	String[] tmpArray2;
-	
-	if(ID.equals("choi") && PW.equals("1234")){
-		session.setAttribute("id", "admin");
-		
+	if(userID.equals(ID) && userPWD.equals(PW)){
+		session.setAttribute("id", ID);
 		%>
 		<jsp:forward page = 'main.jsp'></jsp:forward>
-	<%}else{
+		
+	<%
+		response.sendRedirect("./menu.jsp");
+	}else if(!userID.equals(ID) && !userPWD.equals(PW)){
+		session.setAttribute("id", "");
 		%> 
-		<script>
-			alert("존재하지 않는 정보입니다. 다시 입력해주세요");
-		</script>
-		<jsp:forward page = 'login.jsp'></jsp:forward>
+		<jsp:forward page = 'main.jsp'></jsp:forward>
 		<%
+		response.sendRedirect("./menu.jsp");
+		response.sendRedirect("./cstory_result_pro.jsp");
 	}
 %>
 	

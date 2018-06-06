@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <style>
+@font-face { font-family: 'NANUMBARUNGOTHICLIGHT'; src: url(font/NANUMBARUNGOTHICLIGHT.TTF) format('truetype'); } 
+	body{
+		font-family: NANUMBARUNGOTHICLIGHT
+	}
+	
 	td{
 		padding: 30px;
 		margin-left: 50px;
@@ -34,11 +39,6 @@
   		color:#1AAB8A;
 	}
 
-	label{
-		 color: #1AAB8A;
-		 font-size: 15pt;
-		 margin-left:30px;
-	}
 	
 	body{
 		background-color: #1AAB8A;
@@ -66,8 +66,10 @@ function checkValue(){
 		alert("비밀번호를 입력해주세요.");
 	}
 	
-	if(id != "choi" || pw != "1234"){
-		alert("존재하지 않는 회원정보입니다.");
+	if(document.userInfo.pw.value != "1234" || document.userInfo.id.value != "choi"){
+		alert("존재하지 않는 회원정보입니다.");	
+	}else{
+		alert("환영합니다!");
 	}
 
 }
@@ -77,26 +79,23 @@ function checkValue(){
 <body>
 <center>
 <form method = "post" action = "loginPro.jsp" name = "userInfo" onsubmit = "return checkValue()">
-	<table rules=groups border = 2 bordercolor = #1AAB8A  style = "background-color: white; margin-top: 200px;">
+	<table rules=groups border = 2 bordercolor = #1AAB8A  style = "background-color: white; margin-top: 300px;">
 		<tr>
 			<td>
-				아이디
-			</td>
-			<td>	
-				<input type = "text" name = "id" id = "id">
+				<label style = "margin-right:30px">아이디</label>
+				<input type = "text" name = "id" id = "id" style = "height: 25px">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				비밀번호
-			</td>
-			<td>	
-				<input type = "password" name = "pw" id = "pw">
+				<label style = "margin-right:16px">비밀번호</label>	
+				<input type = "password" name = "pw" id = "pw" style = "height: 25px">
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<input type = "submit" value = "로그인" class = "button">
+				<input type = "submit" value = "로그인" class = "button" style = "margin-right: 20px">
+				<a href = "loginPro.jsp"><input type = "button" value = "비회원" class = "button"></a>
 			</td>
 		</tr>
 	</table>

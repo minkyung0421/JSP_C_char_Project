@@ -28,6 +28,25 @@ div.name {
 	text-align: center;
 	padding-top: 20px;
 }
+
+.button {
+	background: #1AAB8A;
+	color: #fff;
+	border: none;
+	position: relative;
+	height: 40px;
+	font-size: 13pt;
+	padding: 0 2em;
+	cursor: pointer;
+	transition: 800ms ease all;
+	outline: none;
+	margin-bottom: 30px;
+}
+
+.button:hover {
+	background: #fff;
+	color: #1AAB8A;
+}
 </style>
 <body>
 	<div style="font-family: NANUMBARUNGOTHICLIGHT;">
@@ -40,6 +59,7 @@ div.name {
 			</h1>
 
 			<%
+				request.setCharacterEncoding("UTF-8");
 				String str1 = request.getParameter("send");
 
 				String grade = request.getParameter("grade");
@@ -87,7 +107,6 @@ div.name {
 
 				}
 			%>
-			
 		</center>
 	</div>
 </body>

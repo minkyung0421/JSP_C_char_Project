@@ -36,10 +36,12 @@ body { font-family: NANUMBARUNGOTHIC; }
 	 }
 	
 </style>
-<%!String id; %>
+<%!String checkId = ""; %>
 <%
 	request.setCharacterEncoding("UTF-8");
-	id = request.getParameter("id");
+
+	checkId = (String)session.getAttribute("id");
+	
 %>
 <body>
 <center>
@@ -51,7 +53,15 @@ body { font-family: NANUMBARUNGOTHIC; }
 <ul class = "mylist">
 	<a href = "cpaint.jsp" style = "color:black"><li>그림한자</li></a>
 	<a href = "cstory.jsp" style = "color:black"><li>이야기한자</li></a>
-	<a href = "mylist.jsp"  style = "color:black"><li>저장리스트</li></a>
+<%
+	if(checkId.equals("")){%>
+		<a href = "login.jsp" style = "color:black"><li>로그인</li></a>
+	<%}else{%>
+		<a href = "mylist.jsp" style = "color:black"><li>저장리스트</li></a>
+		<a href = "logout.jsp" style = "color:black"><li>로그아웃</li></a>
+	<%}
+%>
+	
 </ul>
 </h1>
 </div>
