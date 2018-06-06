@@ -1,0 +1,68 @@
+@font-face {
+	font-family: 'NANUMBARUNGOTHICLIGHT';
+	src: url(font/NANUMBARUNGOTHICLIGHT.TTF) format('truetype');
+}
+/* 	td{
+		
+	} */
+	
+	body{
+		padding: 0px;
+		margin:0px;
+	}
+	
+	
+	td.han{
+		width: 100px;
+		height: 100px;
+		font-size:80pt;
+		text-align:center;
+		font-family: NANUMBARUNGOTHIC;
+	}
+	
+	td.gle{
+		text-align:center;
+		font-family: NANUMBARUNGOTHIC;
+		font-size:15pt;
+	}
+
+	a.one:hover{
+		background-image: url('image/school.png');
+	}
+	
+	
+	.mytable { border-collapse:collapse; }  
+	.mytable th, .mytable td { border:1px solid black; }
+	
+	canvas {
+		border:2px solid black;
+	}
+	
+		.button{
+		background:#1AAB8A;
+		color: #fff;
+		border: none;
+		position:relative;
+		height: 40px;
+		font-size: 13pt;
+		padding: 0 2em;
+		cursor: pointer;
+		transition: 800ms ease all;
+		outline: none;
+	}
+	
+	.button:hover{
+  		background:#fff;
+  		color:#1AAB8A;
+	}
+	
+	select {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    color: #1AAB8A;
+    border: 1px solid #1AAB8A;
+    border-radius: 3px;
+}
+
